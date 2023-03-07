@@ -5,10 +5,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class TestSpring {
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);// контейнер для создания бинов
 
-        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-        MusicPlayer musicPlayer1 = context.getBean("musicPlayer", MusicPlayer.class);
+        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);// создаем бин, с параметрами класса
+        MusicPlayer musicPlayer1 = context.getBean("musicPlayer", MusicPlayer.class);// создаем второй бин с параметрами класса
 
         musicPlayer.playMusic(MusicType.ROCK);
         musicPlayer1.playMusic(MusicType.CLASSICAL);
